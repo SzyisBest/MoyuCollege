@@ -2,6 +2,7 @@ public class Holle {
     public static void main(String[] args) {
         System.out.println("Hello World");
         System.out.println("陈靖宇神采奕奕");
+        System.out.println("盛振宇到此一游");
     }
 
 }
