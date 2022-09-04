@@ -84,6 +84,31 @@
       <version>1.18.24</version>
       <scope>provided</scope>
     </dependency>
+    <!-- poi AOP -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>5.2.2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>easyexcel</artifactId>
+      <version>3.0.5</version>
+    </dependency>
+    <!-- oss文件上传下载 -->
+    <dependency>
+      <groupId>com.aliyun.oss</groupId>
+      <artifactId>aliyun-sdk-oss</artifactId>
+      <version>3.10.2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/aspectj/aspectjrt -->
+    <dependency>
+      <groupId>aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
+      <version>1.5.3</version>
+    </dependency>
+
 
   </dependencies>
 
@@ -122,6 +147,16 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>
     <!--  xml 文件 静态资源导出 -->
     <resources>
       <resource>
