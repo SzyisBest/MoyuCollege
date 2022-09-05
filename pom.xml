@@ -27,6 +27,17 @@
       <version>8.0.1</version>
       <scope>provided</scope>
     </dependency>
+    <!-- spring-security -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+      <version>5.4.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+      <version>5.4.2</version>
+    </dependency>
     <!-- junit测试依赖 -->
     <dependency>
       <groupId>junit</groupId>
@@ -41,17 +52,42 @@
       <version>3.1.0</version>
       <scope>provided</scope>
     </dependency>
+
     <!-- spring  mvc  -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>5.3.4</version>
     </dependency>
-    <!-- spring-jdbc -->
+    <!-- 浏览器解析工具类 -->
     <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-jdbc</artifactId>
-      <version>5.3.4</version>
+      <groupId>eu.bitwalker</groupId>
+      <artifactId>UserAgentUtils</artifactId>
+      <version>1.20</version>
+    </dependency>
+    <!-- 敏感词工具类 -->
+    <dependency>
+      <groupId>com.github.houbb</groupId>
+      <artifactId>sensitive-word</artifactId>
+      <version>0.2.0</version>
+    </dependency>
+    <!-- redis -->
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-redis</artifactId>
+      <version>2.7.2</version>
+    </dependency>
+    <!-- mybatis-plus -->
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus</artifactId>
+      <version>3.5.2</version>
+    </dependency>
+    <!-- swagger接口文档 -->
+    <dependency>
+      <groupId>com.github.xiaoymin</groupId>
+      <artifactId>knife4j-spring-ui</artifactId>
+      <version>2.0.7</version>
     </dependency>
     <!-- c3p0数据库连接池 -->
     <dependency>
@@ -64,6 +100,18 @@
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
       <version>2.0.7</version>
+    </dependency>
+    <!-- 通用工具包 -->
+    <dependency>
+      <groupId>cn.hutool</groupId>
+      <artifactId>hutool-all</artifactId>
+      <version>5.7.5</version>
+    </dependency>
+    <!-- 前后端数据校验 -->
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>6.2.0.Final</version>
     </dependency>
     <!--   okhttp3 maven依赖 -->
     <dependency>
@@ -114,11 +162,11 @@
       <artifactId>ojdbc8</artifactId>
       <version>21.1.0.0</version>
     </dependency>
-    <!-- StringUtils工具类 -->
+    <!-- 腾讯云cos-->
     <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>3.12.0</version>
+      <groupId>com.qcloud</groupId>
+      <artifactId>cos_api</artifactId>
+      <version>5.6.75</version>
     </dependency>
 
 
