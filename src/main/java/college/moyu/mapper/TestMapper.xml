@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="college.moyu.mapper.TestMapper">
 
-    <select id="testData">
-        select * from student;
+    <select id="testData" resultType="testStu">
+        select * from student
     </select>
 
 </mapper>

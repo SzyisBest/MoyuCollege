@@ -38,6 +38,18 @@
 <!--      <artifactId>spring-security-config</artifactId>-->
 <!--      <version>5.4.2</version>-->
 <!--    </dependency>-->
+    <!-- spring-jdbc -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>5.3.4</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.29</version>
+    </dependency>
     <!-- junit测试依赖 -->
     <dependency>
       <groupId>junit</groupId>

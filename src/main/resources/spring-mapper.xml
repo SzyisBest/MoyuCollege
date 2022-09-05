@@ -44,7 +44,7 @@
         <!--  注入 sqlSessionFactory      -->
         <property name="sqlSessionFactoryBeanName" value="sqlSeesionFactory"/>
         <!--  要扫描mapper层的包      -->
-        <property name="basePackage" value="college.moyu.mapper.TestMapper"/>
+        <property name="basePackage" value="college.moyu.mapper"/>
     </bean>
 
 </beans>
