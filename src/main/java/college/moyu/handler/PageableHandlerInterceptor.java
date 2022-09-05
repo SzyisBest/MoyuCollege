@@ -1,4 +1,4 @@
-package college.moyu.exception;
+package college.moyu.handler;
 
 
 import college.moyu.utils.PageUtils;
