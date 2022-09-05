@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--  别名  -->
+    <!-- 别名，自动扫描com.szy.bean下的类型，
+    使得在后续配置文件Mapper.xml中使用resultType的时候，
+    可以直接使用TestBean,而不必写全com.szy.bean.TestBean -->
+<!--    <typeAliases>-->
+<!--        <package name="com.szy.bean"/>-->
+<!--    </typeAliases>-->
+    <!-- 映射Mapper接口   -->
+    <mappers>
+        <mapper class="college.moyu.mapper.TestMapper" />
+    </mappers>
+</configuration>

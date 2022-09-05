@@ -1,4 +1,4 @@
-package college.utils;
+package college.moyu.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;

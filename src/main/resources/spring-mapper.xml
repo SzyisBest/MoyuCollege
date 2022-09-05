@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+    <!-- 关联数据库配置文件 1   -->
+    <context:property-placeholder location="classpath:database.properties"/>
+
+    <!-- 连接池 2
+    dbcp:半自动化操作 不能自动连接
+    c3p0:自动化操作（自动化的加载配置文件，并且可以自动设置到对象中）
+    druid：公司企业用
+    hikari：Springboot2.0默认连接池
+    -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driver}" />
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+
+        <!-- c3p0连接池的私有属性 -->
+        <property name="maxPoolSize" value="15"/>
+        <property name="minPoolSize" value="3"/>
+        <!-- 指定连接数据库连接池的连接的最大空闲时间 -->
+        <property name="maxIdleTime" value="30000" />
+        <!-- 关闭连接后不自动commit -->
+        <property name="autoCommitOnClose" value="false"/>
+        <!-- 获取连接超时时间 -->
+        <property name="checkoutTimeout" value="30000"/>
+        <!-- 当获取连接失败重试次数 -->
+        <property name="acquireRetryAttempts" value="2"/>
+    </bean>
+
+    <!-- sqlSessionFactory 3 -->
+    <bean id="sqlSeesionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--  注入 sqlSessionFactory      -->
+        <property name="sqlSessionFactoryBeanName" value="sqlSeesionFactory"/>
+        <!--  要扫描mapper层的包      -->
+        <property name="basePackage" value="college.moyu.mapper.TestMapper"/>
+    </bean>
+
+</beans>
