@@ -27,11 +27,7 @@ public class StudentRoleServiceImplements implements StudentRoleServiceInterface
     public List<testStu> testData() {
         String str = JSON.toJSON(studentRoleMapper.testData()).toString();
         log.info(str);
-//        studentRoleMapper.addData(new testStu(LocalDateTime.now().getMinute() + "分" + LocalDateTime.now().getSecond() + "秒",LocalDateTime.now().getSecond()));
-        studentRoleMapper.addData(new testStu(1,"sszzyy",32,"男"));
-        //运行时异常代码
-        int[] a = new int[5];
-        System.out.println(a[6]);
-        return null;
+        studentRoleMapper.addData(new testStu(LocalDateTime.now().getMinute() + "分" + LocalDateTime.now().getSecond() + "秒",LocalDateTime.now().getSecond()));
+        return studentRoleMapper.testData();
     }
 }
