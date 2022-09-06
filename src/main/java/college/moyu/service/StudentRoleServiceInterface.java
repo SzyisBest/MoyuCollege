@@ -7,4 +7,5 @@ import java.util.Map;
 
 public interface StudentRoleServiceInterface {
     List<testStu> testData();
+
 }

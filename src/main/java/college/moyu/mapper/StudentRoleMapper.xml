@@ -7,4 +7,13 @@
     <select id="testData" resultType="testStu">
         select * from STUDENT
     </select>
+
+<!--    <insert id="addData" parameterType="testStu">-->
+<!--        insert into STUDENT values(#{name},#{age})-->
+<!--    </insert>-->
+
+    <insert id="addData" parameterType="testStu">
+        insert into STUDENT values(null,#{sname},#{sage},#{ssex})
+    </insert>
+
 </mapper>

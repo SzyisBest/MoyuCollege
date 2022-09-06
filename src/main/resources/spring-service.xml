@@ -1,17 +1,48 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+       http://www.springframework.org/schema/context/spring-context-4.3.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- 1.扫描service相关的bean -->
     <context:component-scan base-package="college.moyu.service"/>
 
-<!--    &lt;!&ndash;  3.声明式事务配置  &ndash;&gt;-->
-<!--    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
-<!--        <property name="dataSource" ref="dataSource"/>-->
-<!--    </bean>-->
+    <!--  3.声明式事务配置 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+     <!--Spring事务配置-->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <!-- 给指定开头的方法名编织事务 -->
+        <tx:attributes>
+<!--            <tx:method name="add*" propagation="REQUIRED" rollback-for="Exception" />-->
+<!--            <tx:method name="insert*" propagation="REQUIRED" rollback-for="Exception" />-->
+<!--            <tx:method name="update*" propagation="REQUIRED" rollback-for="Exception" />-->
+<!--            <tx:method name="modify*" propagation="REQUIRED" rollback-for="Exception" />-->
+<!--            <tx:method name="alter*" propagation="REQUIRED" rollback-for="Exception" />-->
+<!--            <tx:method name="delete*" propagation="REQUIRED" rollback-for="Exception" />-->
+<!--            <tx:method name="cancel*" propagation="REQUIRED" rollback-for="Exception" />-->
+<!--            <tx:method name="remove*" propagation="REQUIRED" rollback-for="Exception" />-->
+            <tx:method name="test*" propagation="REQUIRED" rollback-for="Exception" />
+<!--            <tx:method name="query*" read-only="true"/>-->
+<!--            <tx:method name="select*" read-only="true"/>-->
+            <tx:method name="*" />
+        </tx:attributes>
+    </tx:advice>
+
+    <!-- 配置事务的切入 -->
+    <aop:config expose-proxy="true" proxy-target-class="true">
+        <aop:pointcut id="moyuPointCut" expression="execution(* college.moyu.mapper.*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="moyuPointCut"/>
+    </aop:config>
 
 </beans>
