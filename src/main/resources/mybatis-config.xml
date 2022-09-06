@@ -6,12 +6,13 @@
     <!--  别名  -->
     <!-- 别名，自动扫描com.szy.bean下的类型，
     使得在后续配置文件Mapper.xml中使用resultType的时候，
-    可以直接使用TestBean,而不必写全com.szy.bean.TestBean -->
+    可以直接使用TestBean,而不必写全 -->
     <typeAliases>
         <package name="college.moyu.pojo"/>
     </typeAliases>
     <!-- 映射Mapper接口   -->
+
     <mappers>
-        <mapper class="college.moyu.mapper.TestMapper" />
+        <package name="college.moyu.mapper"/>
     </mappers>
 </configuration>

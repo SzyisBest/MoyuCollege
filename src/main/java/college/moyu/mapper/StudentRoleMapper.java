@@ -1,11 +1,10 @@
 package college.moyu.mapper;
 
 import college.moyu.pojo.testStu;
-import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
-public interface TestMapper {
+public interface StudentRoleMapper {
 
     List<testStu> testData();
 }

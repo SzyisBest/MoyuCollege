@@ -95,6 +95,13 @@
       <artifactId>mybatis-plus</artifactId>
       <version>3.5.2</version>
     </dependency>
+    <!-- mybatis-spring -->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>2.0.6</version>
+    </dependency>
+
     <!-- swagger接口文档 -->
     <dependency>
       <groupId>com.github.xiaoymin</groupId>
@@ -237,7 +244,7 @@
           <include>**/*.properties</include>
           <include>**/*.xml</include>
         </includes>
-        <filtering>false</filtering>
+        <filtering>true</filtering>
       </resource>
       <resource>
         <directory>src/main/resources</directory>
@@ -245,7 +252,7 @@
           <include>**/*.properties</include>
           <include>**/*.xml</include>
         </includes>
-        <filtering>false</filtering>
+        <filtering>true</filtering>
       </resource>
     </resources>
   </build>
