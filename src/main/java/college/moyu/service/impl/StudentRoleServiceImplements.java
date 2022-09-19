@@ -3,15 +3,10 @@ package college.moyu.service.impl;
 import college.moyu.mapper.StudentRoleMapper;
 import college.moyu.pojo.testStu;
 import college.moyu.service.StudentRoleServiceInterface;
-import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson2.JSON;
 import lombok.extern.slf4j.Slf4j;
-import org.aspectj.lang.annotation.AdviceName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;

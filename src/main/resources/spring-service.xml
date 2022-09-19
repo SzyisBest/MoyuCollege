@@ -42,7 +42,7 @@
         </tx:attributes>
     </tx:advice>
 
-    <!-- 配置事务的切入 -->
+<!--     配置事务的切入 -->
     <aop:config expose-proxy="true" proxy-target-class="true">
         <aop:pointcut id="moyuPointCut" expression="execution(* college.moyu.service.*.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="moyuPointCut"/>

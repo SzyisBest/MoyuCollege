@@ -1,4 +1,4 @@
-package college.moyu.utils;
+package college.moyu.annotation;
 
 import java.lang.annotation.*;
 
