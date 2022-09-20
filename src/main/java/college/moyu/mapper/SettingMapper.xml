@@ -3,6 +3,33 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="college.moyu.mapper.SettingMapper">
-
+    <resultMap id="MoyuMenuPojo" type="college.moyu.pojo.MoyuMenuPojo">
+        <result column="menu_id" property="menuId" javaType="Integer"/>
+        <result column="menu_name" property="menuName"/>
+        <result column="menu_path" property="menuPath"/>
+        <result column="menu_componet" property="menuComponet"/>
+        <result column="menu_icon" property="menuIcon"/>
+        <result column="menu_parentId" property="menuParentid"/>
+        <result column="is_hidden" property="isHidden"/>
+        <result column="order_num" property="orderNum" javaType="Integer"/>
+        <result column="use_flag" property="useFlag" javaType="Integer"/>
+    </resultMap>
+    <select id="selectMenuList" resultMap="MoyuMenuPojo">
+        SELECT
+            "menu_id",
+            "menu_name",
+            "menu_path",
+            "menu_componet",
+            "menu_icon",
+            "menu_parentId",
+            "is_hidden",
+            "order_num",
+            "use_flag"
+        FROM
+            "moyu_menu" menu
+            INNER JOIN ( SELECT MENU_ID FROM "moyu_roleMenu" WHERE ROLE_ID IN ( SELECT "role_id" FROM "moyu_role" WHERE "role_id" = #{id} ) ) role ON "menu_id" = MENU_ID
+        WHERE
+            menu."use_flag" = 1
+    </select>
 
 </mapper>

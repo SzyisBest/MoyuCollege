@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -15,36 +17,36 @@ import java.io.Serializable;
 public class ResponseStatus implements Serializable {
     private static final long serialVersionUID = 1824076384156716080L;
     /**
-    * @Description: 默认的成功信息
-    * @Param:
-    * @return:
-    * @Author: Shengzhenyu
-    * @Date: 2021/12/9
-    **/
+     * @Description: 默认的成功信息
+     * @Param:
+     * @return:
+     * @Author: Shengzhenyu
+     * @Date: 2021/12/9
+     **/
     private static final String DEFAULT_SUCCESS_MESSAGE = "数据操作执行成功";
     /**
-    * @Description: 默认的错误信息
-    * @Param:
-    * @return:
-    * @Author: Shengzhenyu
-    * @Date: 2021/12/9
-    **/
+     * @Description: 默认的错误信息
+     * @Param:
+     * @return:
+     * @Author: Shengzhenyu
+     * @Date: 2021/12/9
+     **/
     private static final String DEFAULT_FAILURE_MESSAGE = "数据操作执行失败";
     /**
-    * @Description: 默认的成功CODE
-    * @Param:
-    * @return:
-    * @Author: Shengzhenyu
-    * @Date: 2021/12/9
-    **/
+     * @Description: 默认的成功CODE
+     * @Param:
+     * @return:
+     * @Author: Shengzhenyu
+     * @Date: 2021/12/9
+     **/
     private static final int DEFAULT_SUCCESS_CODE = 200;
     /**
-    * @Description: 默认的错误CODE
-    * @Param:
-    * @return:
-    * @Author: Shengzhenyu
-    * @Date: 2021/12/9
-    **/
+     * @Description: 默认的错误CODE
+     * @Param:
+     * @return:
+     * @Author: Shengzhenyu
+     * @Date: 2021/12/9
+     **/
     private static final int DEFAULT_FAILURE_CODE = 701;
 
     /**
@@ -115,8 +117,9 @@ public class ResponseStatus implements Serializable {
      * @Date: 2021/12/9
      **/
     public static JSONObject createSuccessStatus(Object object) {
-        ResponseStatus result = new ResponseStatus(Boolean.TRUE, ResponseStatus.DEFAULT_SUCCESS_CODE, ResponseStatus.DEFAULT_SUCCESS_MESSAGE, object);
-        return (JSONObject) JSON.toJSON(result);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("result", new ResponseStatus(Boolean.TRUE, ResponseStatus.DEFAULT_SUCCESS_CODE, ResponseStatus.DEFAULT_SUCCESS_MESSAGE, object));
+        return jsonObject;
     }
 
     /**
@@ -140,7 +143,9 @@ public class ResponseStatus implements Serializable {
      **/
     public static JSONObject createSuccessStatus(String successMessage, Object object) {
         ResponseStatus result = new ResponseStatus(Boolean.TRUE, ResponseStatus.DEFAULT_SUCCESS_CODE, successMessage, object);
-        return (JSONObject) JSON.toJSON(result);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("result", result);
+        return jsonObject;
     }
 
     /**
@@ -152,7 +157,9 @@ public class ResponseStatus implements Serializable {
      **/
     public static JSONObject createSuccessStatus(String successMessage, int code, Object object) {
         ResponseStatus result = new ResponseStatus(Boolean.TRUE, code, successMessage, object);
-        return (JSONObject) JSON.toJSON(result);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("result", result);
+        return jsonObject;
     }
 
     /**
@@ -188,7 +195,9 @@ public class ResponseStatus implements Serializable {
      **/
     public static JSONObject createFailureStatus(Object object) {
         ResponseStatus result = new ResponseStatus(Boolean.FALSE, ResponseStatus.DEFAULT_FAILURE_CODE, ResponseStatus.DEFAULT_FAILURE_MESSAGE, object);
-        return (JSONObject) JSON.toJSON(result);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("result", result);
+        return jsonObject;
     }
 
     /**
@@ -212,7 +221,9 @@ public class ResponseStatus implements Serializable {
      **/
     public static JSONObject createFailureStatus(String errorMessage, Object object) {
         ResponseStatus result = new ResponseStatus(Boolean.FALSE, ResponseStatus.DEFAULT_FAILURE_CODE, errorMessage, object);
-        return (JSONObject) JSON.toJSON(result);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("result", result);
+        return jsonObject;
     }
 
     /**
@@ -224,7 +235,9 @@ public class ResponseStatus implements Serializable {
      **/
     public static JSONObject createFailureStatus(String errorMessage, int code, Object object) {
         ResponseStatus result = new ResponseStatus(Boolean.FALSE, code, errorMessage, object);
-        return (JSONObject) JSON.toJSON(result);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("result", result);
+        return jsonObject;
     }
 
     public boolean isStatus() {

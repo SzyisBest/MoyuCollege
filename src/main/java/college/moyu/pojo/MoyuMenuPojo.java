@@ -6,7 +6,7 @@ public class MoyuMenuPojo {
     /**
      * 菜单id
      */
-    private Double menuId;
+    private int menuId;
     /**
      * 菜单名
      */
@@ -14,7 +14,7 @@ public class MoyuMenuPojo {
     /**
      * 菜单路径
      */
-    private Date menuPath;
+    private String menuPath;
     /**
      * 菜单组件
      */
@@ -22,7 +22,7 @@ public class MoyuMenuPojo {
     /**
      * 菜单icon
      */
-    private Date menuIcon;
+    private String menuIcon;
     /**
      * 菜单父类id
      */
@@ -34,7 +34,7 @@ public class MoyuMenuPojo {
     /**
      * 菜单排序
      */
-    private String orderNum;
+    private int orderNum;
     /**
      * 创建时间
      */
@@ -46,9 +46,29 @@ public class MoyuMenuPojo {
     /**
      * 数据有效性
      */
-    private String useFlag;
+    private int useFlag;
 
-    public MoyuMenuPojo(Double menuId, String menuName, Date menuPath, String menuComponet, Date menuIcon, String menuParentid, String isHidden, String orderNum, String createdtime, String updatetime, String useFlag) {
+
+    public MoyuMenuPojo() {
+    }
+
+    public int getMenuId() {
+        return menuId;
+    }
+
+    public void setMenuId(int menuId) {
+        this.menuId = menuId;
+    }
+
+    public int getUseFlag() {
+        return useFlag;
+    }
+
+    public void setUseFlag(int useFlag) {
+        this.useFlag = useFlag;
+    }
+
+    public MoyuMenuPojo(int menuId, String menuName, String menuPath, String menuComponet, String menuIcon, String menuParentid, String isHidden, int orderNum, String createdtime, String updatetime, int useFlag) {
         this.menuId = menuId;
         this.menuName = menuName;
         this.menuPath = menuPath;
@@ -62,15 +82,28 @@ public class MoyuMenuPojo {
         this.useFlag = useFlag;
     }
 
-    public MoyuMenuPojo() {
+    public String getMenuPath() {
+        return menuPath;
     }
 
-    public Double getMenuId() {
-        return menuId;
+    public void setMenuPath(String menuPath) {
+        this.menuPath = menuPath;
     }
 
-    public void setMenuId(Double menuId) {
-        this.menuId = menuId;
+    public String getMenuIcon() {
+        return menuIcon;
+    }
+
+    public void setMenuIcon(String menuIcon) {
+        this.menuIcon = menuIcon;
+    }
+
+    public int getOrderNum() {
+        return orderNum;
+    }
+
+    public void setOrderNum(int orderNum) {
+        this.orderNum = orderNum;
     }
 
     public String getMenuName() {
@@ -81,28 +114,12 @@ public class MoyuMenuPojo {
         this.menuName = menuName;
     }
 
-    public Date getMenuPath() {
-        return menuPath;
-    }
-
-    public void setMenuPath(Date menuPath) {
-        this.menuPath = menuPath;
-    }
-
     public String getMenuComponet() {
         return menuComponet;
     }
 
     public void setMenuComponet(String menuComponet) {
         this.menuComponet = menuComponet;
-    }
-
-    public Date getMenuIcon() {
-        return menuIcon;
-    }
-
-    public void setMenuIcon(Date menuIcon) {
-        this.menuIcon = menuIcon;
     }
 
     public String getMenuParentid() {
@@ -121,14 +138,6 @@ public class MoyuMenuPojo {
         this.isHidden = isHidden;
     }
 
-    public String getOrderNum() {
-        return orderNum;
-    }
-
-    public void setOrderNum(String orderNum) {
-        this.orderNum = orderNum;
-    }
-
     public String getCreatedtime() {
         return createdtime;
     }
@@ -145,11 +154,4 @@ public class MoyuMenuPojo {
         this.updatetime = updatetime;
     }
 
-    public String getUseFlag() {
-        return useFlag;
-    }
-
-    public void setUseFlag(String useFlag) {
-        this.useFlag = useFlag;
-    }
 }
